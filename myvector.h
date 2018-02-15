@@ -11,25 +11,25 @@ struct TDATO
 class myvector {
     
 public:
-    //Estandar
     myvector();
     myvector(const myvector& orig);
     virtual ~myvector();
-    //Práctica
     void show();
-    void add(TDATO &d);
-    void remove();
     int count();
+    void clear();
+    void remove();
     TDATO& get(int i);
-    void insert(TDATO &d, int at);
+    void add(TDATO &d);
     void removeat(int at);
-    //void reverse();
-    //void clear();
+    void debug(bool is_active);
+    void insert(TDATO &d, int at);
 private:
-    void resize(int i);
     int length = 0;
+    int max_limit = 0;
+    bool debug_flag = false;
     struct TDATO *p_objects;
+    void resize(int i);
+    void dmsg(std::string message);
 };
 
 #endif
-
